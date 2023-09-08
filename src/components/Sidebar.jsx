@@ -5,11 +5,12 @@ const SelectedCategory = 'New';
 
 const Sidebar = () => 
  (
-    <Stack direction="row"
+    <Stack 
+    direction="row"
     sx={{
-        overflowY: 'auto',
-        height: {sx: 'auto', md:'95%'},
-        flexDirection: {md: 'column'}
+      overflowY: "auto",
+      height: { sx: "auto", md: "95%" },
+      flexDirection: { md: "column" },
     }}
     >
 
@@ -19,8 +20,8 @@ const Sidebar = () =>
     category.name === SelectedCategory && '#FC1503', color:'#fff' }}
     key={category.name}
     >
-        <span>{category.item}</span>
-        <span>{category.name}</span>
+        <span style={{color: category.name===SelectedCategory ? 'white' : 'red', marginRight: '15px'}}>{category.icon}</span>
+        <span style={{opacity: category.name===SelectedCategory ? '1' : '0.8'}}>{category.name}</span>
     </button>
 ))
 )

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { BorderRight } from "@mui/icons-material";
 
-import {Sidebar} from './index'
+import {Sidebar} from './index';
 
 const Feed = () => {
   return (
@@ -12,13 +12,15 @@ const Feed = () => {
       <Box sx={{
         height: { sx: 'auto', md: '92vh' }, borderRight: '1px solid #3d3d3d',
         px: { sx: 0, md: 2 }
-      }} />
+      }}>
 
       <Sidebar/>
 
       <Typography className="copyright" variant="body2" sx={{ mt: 1.5, color: '#fff' }}>
         Copyright @2023 krysLyn
       </Typography>
+
+      </Box>
     </Stack>
   )
 }

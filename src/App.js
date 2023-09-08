@@ -15,6 +15,7 @@ const App = () =>
                 <Route path='/channel/:id' element={<ChannelDetail/>}/>
                 <Route path='/search/:searchTerm' element={<SearchFeed/>}/>
             </Routes>
+            
         </Box>
         </BrowserRouter>
     )
