@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { BorderRight } from "@mui/icons-material";
 
-import {Sidebar, Videos} from './';
-import {fetchAPI} from '../utils/fetchAPI';
+import { Sidebar, Videos } from './';
+import { fetchAPI } from '../utils/fetchAPI';
 
 const Feed = () => {
 
@@ -11,13 +11,9 @@ const Feed = () => {
   const [videos, setVideos] = useState([])
 
   useEffect(() => {
-   
-
     fetchAPI(`search?part=snippet&q=${selectedCategory}`)
-    .then((data)=> setVideos(data.items));
-    
-      
-    }, [selectedCategory]);
+      .then((data) => setVideos(data.items));
+  }, [selectedCategory]);
 
 
   return (
@@ -29,22 +25,22 @@ const Feed = () => {
         px: { sx: 0, md: 2 }
       }}>
 
-      <Sidebar
-      sselectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+        <Sidebar
+          selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
 
-      <Typography className="copyright" variant="body2" sx={{ mt: 1.5, color: '#fff' }}>
-        Copyright @2023 krysLyn
-      </Typography>
+        <Typography className="copyright" variant="body2" sx={{ mt: 1.5, color: '#fff' }}>
+          Copyright @2023 krysLyn
+        </Typography>
 
       </Box>
 
-      <Box p={2} sx={{overflowY: 'auto', height: '90vh', flex: 2}}>
-        <Typography variant="h4" fontWeight='bold' mb={2} sx={{color: 'white'}}>
+      <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: 2 }}>
+        <Typography variant="h4" fontWeight='bold' mb={2} sx={{ color: 'white' }}>
 
-        {selectedCategory} <span style={{color: '#F31503'}}>videos</span>
+          {selectedCategory} <span style={{ color: '#F31503' }}>videos</span>
         </Typography>
 
-        <Videos videos={videos}/>
+        <Videos videos={videos} />
       </Box>
 
     </Stack>

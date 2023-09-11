@@ -16,10 +16,10 @@ const options = {
 
 
 
-export const fetchAPI = async(url) =>{
-    const {data}= await axios.get(`${BASE_URL}/${url}`,options);
+export const fetchAPI = async (url) => {
+  const { data } = await axios.get(`${BASE_URL}/${url}`, options);
 
-    return data;
+  return data;
 }
 
 
