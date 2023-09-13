@@ -6,17 +6,26 @@ import { fetchAPI } from "../utils/fetchAPI";
 
 const ChannelDetail = () => {
 
-const {id} =  useParams();
-const {channelDetail, setChannelDetail} = useState(null);
-const {videos, setVideos} = useState([]);
+  const [channelDetail, setChannelDetail] = useState();
+  const [videos, setVideos] = useState(null);
 
-useEffect(()=>{
-fetchAPI(`channels?part=snippet&id=${id}`)
-.then((data)=>setChannelDetail(data?.items[0]))
+  const { id } = useParams();
 
-fetchAPI(`search?channelId=${id}&part=snippet%2Cid&order=date`)
-.then((data)=>setVideos(data?.items[0]))
-},{id})
+  useEffect(() => {
+    const fetchResults = async () => {
+      const data = await fetchAPI(`channels?part=snippet&id=${id}`);
+
+      setChannelDetail(data?.items[0]);
+
+      const videosData = await fetchAPI(`search?channelId=${id}&part=snippet%2Cid&order=date`);
+
+      setVideos(videosData?.items);
+    };
+
+    fetchResults();
+  }, [id]);
+
+
 
 
   return (
