@@ -7,7 +7,7 @@ import { fetchAPI } from "../utils/fetchAPI";
 const ChannelDetail = () => {
 
   const [channelDetail, setChannelDetail] = useState();
-  const [videos, setVideos] = useState(null);
+  const [videos, setVideos] = useState([]);
 
   const { id } = useParams();
 
@@ -17,7 +17,7 @@ const ChannelDetail = () => {
 
       setChannelDetail(data?.items[0]);
 
-      const videosData = await fetchAPI(`search?channelId=${id}&part=snippet%2Cid&order=date`);
+      const videosData = await fetchAPI(`search?channelId=${id}&part=snippet&&order=date`);
 
       setVideos(videosData?.items);
     };
@@ -39,7 +39,7 @@ const ChannelDetail = () => {
 
         <Box display='flex' p='2'>
           <Box sx={{ mr: { sm: '100px' } }} />
-      
+          <Videos videos={videos} />
         </Box>
       </Box>
     </Box>
