@@ -34,12 +34,12 @@ const ChannelDetail = () => {
           background: 'linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%, rgba(0,212,255,1) 100%)',
           zIndex: 10
         }} />
-        <ChannelCard channelDetail={channelDetail }
-        marginTop='-110px'/>
+        <ChannelCard channelDetail={channelDetail}
+          marginTop='-110px' />
 
         <Box display='flex' p='2'>
-          <Box sx={{mr: {sm: '100px'}}}/>
-            <Videos videos={videos}/>
+          <Box sx={{ mr: { sm: '100px' } }} />
+      
         </Box>
       </Box>
     </Box>
