@@ -19,7 +19,7 @@ const Navbar = () =>
 
     </Link>
 
-    <SearchBar/>
+    <SearchBar />
   </Stack>
 )
 
