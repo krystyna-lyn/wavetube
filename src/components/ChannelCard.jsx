@@ -13,8 +13,8 @@ const ChannelCard = ({ channelDetail, marginTop }) => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      width: { xs: '356px', md: '320px' },
-      height: '326px',
+      width: '180px', // width of the avatar
+      height: 'auto',
       margin: 'auto',
       marginTop,
     }}>
